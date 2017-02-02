@@ -15,10 +15,19 @@
         <!--Heading-->
         <h1>Take Some Notes</h1>
 
+        <!--New Note-->
+        <form runat="server" postbackurl="Add.aspx" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" name="title" placeholder="Title" />
+                <input type="text" class="form-control" name="body" placeholder="Body" />
+                <input type="text" class="form-control" name="timestamp" placeholder="Timestamp" />
+                <input type="submit" class="btn btn-default" value="Add" />
+            </div>
+        </form>
+
         <!--Notes Table-->
         <table class="table table-bordered table-hover">
             <thead>
-
                 <tr>
                     <th>Title</th>
                     <th>Body</th>
@@ -37,7 +46,6 @@
                     <td><%= note.Created %></td>
                 </tr>
                 <% } %>
-
             </tbody>
         </table>
 
