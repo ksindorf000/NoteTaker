@@ -8,17 +8,38 @@
     <title>NoteTaker App</title>
 </head>
 <body>
+
+    <!--Begin Main Container-->
     <div class="container">
+
+        <!--Heading-->
         <h1>Take Some Notes</h1>
 
+        <!--Notes Table-->
+        <table class="table table-bordered table-hover">
+            <thead>
 
-        <% foreach (var note in Notes)
-            { %>
-        <ul>
-            <li><%=note %></li>
-        </ul>
-        <% } %>
+                <tr>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>Timestamp</th>
+                    <th>Created</th>
+                </tr>
 
+            </thead>
+            <tbody>
+                <% foreach (var note in Notes)
+                    { %>
+                <tr>
+                    <td><%= note.Title %></td>
+                    <td><a href="Edit.aspx?id=<%= note.Id %>"><%= note.Body %></a></td>
+                    <td><%= note.Timestamp %></td>
+                    <td><%= note.Created %></td>
+                </tr>
+                <% } %>
+
+            </tbody>
+        </table>
 
         <!--End Main Container-->
     </div>
