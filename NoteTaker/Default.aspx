@@ -15,8 +15,14 @@
         <!--Heading-->
         <h1>Take Some Notes</h1>
 
+        <!--
+            Remove the `postbackurl` from line 25 and use
+            an ASP button to post to a different code-behind                     
+            <asp:Button ID="SubmitBtn" PostBackUrl="" ... />
+        -->
+
         <!--New Note-->
-        <form runat="server" postbackurl="Add.aspx" method="post">
+        <form runat="server" postbackurl="Add.aspx" method="post"> 
             <div class="form-group">
                 <input type="text" class="form-control" name="title" placeholder="Title" />
                 <input type="text" class="form-control" name="body" placeholder="Body" />
